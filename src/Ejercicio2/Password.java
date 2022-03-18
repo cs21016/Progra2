@@ -42,7 +42,7 @@ public class Password { //Crear una clase Password que contenga atributos de lon
                 case 1:
                    char mayusculas=(char)((int)Math.floor(Math.random()*(91-65)+65));
                    contrasena+=mayusculas;
-                case 3:
+                case 2:
                    char numeros=(char)((int)Math.floor(Math.random()*(58-48)+48));
                    contrasena+=numeros;
             }
