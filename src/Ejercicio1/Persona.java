@@ -48,11 +48,6 @@ public class Persona {//Crear una clase persona con sus atributos: nombre, edad,
         } else {
             return 'H';
         }
-        /*if(sexo!='H' && sexo!='M'){
-            this.sexo='H';
-        }else{
-            this.sexo=sexo;
-        }*/
     }
     private void generarDUI() {
         final int divisor = 23;
