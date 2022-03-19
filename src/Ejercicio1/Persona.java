@@ -28,9 +28,10 @@ public class Persona {//Crear una clase persona con sus atributos: nombre, edad,
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = 0;
+        this.peso = 0;
     }
 
-    public Persona(String nombre, int edad, int DUI, char sexo, double peso, double altura) {
+    public Persona(String nombre, int edad, char sexo, double peso, double altura) {
         this.nombre = nombre;
         this.edad = edad;
         generarDUI();
@@ -71,7 +72,11 @@ public class Persona {//Crear una clase persona con sus atributos: nombre, edad,
     public void setSexo(char sexo) {
         this.sexo = sexo;
     }
-
+    
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+    
     public void setAltura(double altura) {
         this.altura = altura;
     }
@@ -91,7 +96,11 @@ public class Persona {//Crear una clase persona con sus atributos: nombre, edad,
     
     //Indicar si es mayor de edad
     public boolean esMayorDeEdad() {
-        return (this.edad >= 18) ? true : false;
+         boolean mayor = false;
+        if (edad >= 18) {
+            mayor = true;
+        }
+        return mayor;
     }
     
     //Devolverme la información del objeto
