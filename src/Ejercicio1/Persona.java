@@ -28,7 +28,6 @@ public class Persona {//Crear una clase persona con sus atributos: nombre, edad,
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = 0;
-        this.peso = 0;
     }
 
     public Persona(String nombre, int edad, char sexo, double peso, double altura) {
@@ -49,6 +48,7 @@ public class Persona {//Crear una clase persona con sus atributos: nombre, edad,
             return 'H';
         }
     }
+    
     private void generarDUI() {
         final int divisor = 23;
         int numDNI = ((int) Math.floor(Math.random() * (100000000 - 10000000) + 10000000));
@@ -77,6 +77,7 @@ public class Persona {//Crear una clase persona con sus atributos: nombre, edad,
     }
 
     //Estableciendo los Métodos -> (Calcular el IMC) -> (Indicar si es mayor de edad) -> (Devolverme la información del objeto)
+    
     //Calcular el IMC
     public int calcularIMC() {
         double pesoActual = peso / (Math.pow(altura, 2));
