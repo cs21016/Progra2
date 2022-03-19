@@ -23,11 +23,13 @@ public class Persona {//Crear una clase persona con sus atributos: nombre, edad,
         peso = 0;
         altura = 0;
     }
+
     public Persona(String nombre, int edad, char sexo) {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = 0;
     }
+
     public Persona(String nombre, int edad, int DUI, char sexo, double peso, double altura) {
         this.nombre = nombre;
         this.edad = edad;
@@ -61,13 +63,52 @@ public class Persona {//Crear una clase persona con sus atributos: nombre, edad,
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-     public void setEdad(int edad) {
+
+    public void setEdad(int edad) {
         this.edad = edad;
     }
-    public void setSexo(char sexo){
+
+    public void setSexo(char sexo) {
         this.sexo = sexo;
     }
-    public void setAltura(double altura){
-        this.altura =altura;
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    //Estableciendo los Métodos -> (Calcular el IMC) -> (Indicar si es mayor de edad) -> (Devolverme la información del objeto)
+    //Calcular el IMC
+    public int calcularIMC() {
+        double pesoActual = peso / (Math.pow(altura, 2));
+        if (pesoActual >= 20 && pesoActual <= 25) {
+            return PESO_IDEAL;
+        } else if (pesoActual < 20) {
+            return INFRAPESO;
+        } else {
+            return SOBREPESO;
+        }
+    }
+    
+    //Indicar si es mayor de edad
+    public boolean esMayorDeEdad() {
+        return (this.edad >= 18) ? true : false;
+    }
+    
+    //Devolverme la información del objeto
+    public String toString(){
+        String sexo;
+        if (this.sexo == 'H'){
+            sexo = "Hombre";
+        }
+        else {
+            sexo = "Mujer";
+        }
+        return "Datos de la persona:\n"
+            + "Nombre: " + nombre + "\n"
+            + "Sexo: " + sexo + "\n"
+            + "Edad: " + edad + " años\n"
+            + "DUI: " + DUI + "\n"
+            + "Peso: " + peso + " kg\n"
+            + "Altura: " + altura + " metros\n";
     }
 }
