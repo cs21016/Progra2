@@ -52,21 +52,11 @@ public class Password { //Crear una clase Password que contenga atributos de lon
                 case 2:
                     contrasena += (char) (Math.random() * 10 + '0');
                     break;
-                /* case 0:
-                    char minusculas=(char)((int)Math.floor(Math.random()*(123-97)+97));
-                    contrasena+=minusculas;
-                case 1:
-                   char mayusculas=(char)((int)Math.floor(Math.random()*(91-65)+65));
-                   contrasena+=mayusculas;
-                case 2:
-                   char numeros=(char)((int)Math.floor(Math.random()*(58-48)+48));
-                   contrasena+=numeros;*/
             }
         }
         return contrasena;
     }
     //Comprobamos si la contraseña es fuerte o no con un valor booleano
-
     public boolean esFuerte() {
         int contNum = 0, contMinus = 0, contMayus = 0;
         for (int i = 0; i < this.longitud; i++) {
@@ -78,16 +68,6 @@ public class Password { //Crear una clase Password que contenga atributos de lon
             if (this.contrasena.charAt(i) >= '0' && this.contrasena.charAt(i) <= '9') {
                 contNum++;
             }
-            /*if (contrasena.charAt(i)>=97 && contrasena.charAt(i)<=122){
-                contMinus+=1;
-            }
-            else {
-                if (contrasena.charAt(i)>=65 && contrasena.charAt(i)<=90){
-                    contMayus+=1;
-            }
-            else {
-               contNum+=1; 
-            }*/
         }
         if (contMayus > SECURE_PASSWD_MAYUS && contMinus > SECURE_PASSWD_MINUS && contNum > SECURE_PASSWD_NUM) {
             return true;
